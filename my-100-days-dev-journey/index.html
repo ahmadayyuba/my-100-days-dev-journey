@@ -25,13 +25,21 @@
       }
     }
   </script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>\
+
+    <style>
+  .bg-hero {
+    background-image: url('assets/mainphoto.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+</style>
 
  </head>
  <body class=" font-inter">
   <img src="assets/mainphoto.jpg" alt="" class="z-0   absolute top-0 left-0 w-full h-full object-cover bg-fixed  filter brightness-50">
     <header class=" text-white max-w-full mx-auto relative"> 
-
         <!---->
         <nav class=" flex items-center justify-between  max-w-7xl mx-auto">
             <div class="flex p-4 items-center">
@@ -46,7 +54,7 @@
             </div>
 
                  <div class="hidden md:block ml-20 items-center">
-                  <a href="#" class="px-3 py-2 hover:bg-gray-700 rounded">Pesen</a>
+                  <a href="#" class="hidden md:block border-l-orange-700 px-6 py-2 hover:bg-orange-700 rounded bg-orange-800 ">Pesen Wa</a>
                 </div>
 
              <!-- Mobile Menu Button -->
@@ -70,10 +78,11 @@
 
 
     <main class=" min-h-screen relative z-10">
-        <section class=" container text-center min-h-svh flex items-center flex-row gap-8"> 
-            <div class="flex flex-col gap-6 max-2xl:anime max-w-7xl mx-auto">
-            <h1 class=" text-7xl font-bold text-white mb-4 ">
-          Cita Rasa <br class="text-color ">Otentik Medan <br> Rempahnya <br>meresap <br>Sampai ke Hati</h1>
+        <section class="bg-hero h-screen flex relative"> 
+          <div class="absolute inset-0 bg-black/50"></div>
+            <div class="relative z-10 container max-w-7xl mx-auto  min-h-screen flex items-center justify-center flex-col  gap-6 text-left px-6 md:px-12">
+            <h1 class=" text-5xl md:text-7xl font-bold text-white mb-2 leading-tight">
+          Cita Rasa <br class="text-yellow-500 italic ">Otentik Medan <br> Rempahnya <br>Meresap <br>Sampai ke Hati</h1>
              </div>
          </section>
 
