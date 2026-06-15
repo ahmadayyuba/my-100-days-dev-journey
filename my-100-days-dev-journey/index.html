@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,500;1,700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -20,8 +20,8 @@
                     },
                     colors: {
                         brand: {
-                            orange: '#e85d04', // Warna orange tombol
-                            yellow: '#ffba08', // Warna teks Otentik
+                            orange: '#e85d04',
+                            yellow: '#ffba08',
                             dark: '#1a1a1a'
                         }
                     }
@@ -29,33 +29,24 @@
             }
         }
     </script>
-    <style>
-  .bg-hero {
-    background-image: url('assets/mainphoto.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-  }
-</style>
-
- </head>
+</head>
 <body class="font-sans text-white antialiased overflow-x-hidden">
 
     <div class="relative min-h-screen bg-[url('assets/background.jpg')] bg-cover bg-center bg-no-repeat">
-      <img src="assets/mainphoto.jpg" alt="" class="z-0   absolute top-0 left-0 w-full h-full object-cover bg-fixed  filter brightness-50">
+        <img src="assets/mainphoto.jpg" alt="Background Makanan" class="z-0 absolute top-0 left-0 w-full h-full object-cover bg-fixed filter brightness-50">
         
-        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/20"></div>
 
         <div class="relative z-10 min-h-screen flex flex-col w-full max-w-7xl mx-auto px-6 lg:px-12">
             
             <header class="py-6 flex items-center justify-between">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 relative z-50">
                     <div class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-xl">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path></svg>
                     </div>
                     <div class="flex flex-col">
                         <span class="font-bold text-lg leading-tight tracking-wide">Bunda Medan</span>
-                        <span class="text-[10px] tracking-widest text-gray-300">SEJAK 1988</span>
+                        <span class="text-[10px] tracking-widest text-gray-400">SEJAK 1988</span>
                     </div>
                 </div>
 
@@ -69,87 +60,167 @@
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     Pesan WA
                 </a>
+
+                <button id="mobile-menu-btn" class="md:hidden relative z-50 p-2 focus:outline-none hover:text-brand-yellow transition-colors">
+                    <svg id="icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </header>
 
-            <main class="flex-1 flex flex-col justify-center max-w-2xl py-12">
+            <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-sm z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+                <nav class="flex flex-col items-center gap-8 text-xl font-medium">
+                    <a href="#" class="hover:text-brand-yellow transition-colors">Menu</a>
+                    <a href="#" class="hover:text-brand-yellow transition-colors">Katering</a>
+                    <a href="#" class="hover:text-brand-yellow transition-colors">Lokasi</a>
+                    <a href="#" class="mt-4 flex items-center gap-2 bg-brand-orange hover:bg-orange-700 transition-colors text-white px-8 py-3 rounded-full">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        Pesan WA
+                    </a>
+                </nav>
+            </div>
+            <main class="flex-1 flex flex-col justify-center max-w-2xl py-12 md:py-20 relative z-10 mt-8 md:mt-0">
                 
                 <div class="inline-flex items-center gap-2 border border-white/30 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-[10px] font-medium tracking-[0.2em] uppercase mb-6 max-w-max">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
-                    Buka Sekarang • 08.00–21.00
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></span>
+                    Buka Sekarang • 08.00 - 21.00
                 </div>
 
-                <h1 class="text-5xl md:text-7xl font-serif font-bold leading-[1.1] mb-6">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-[1.1] mb-6">
                     Cita Rasa <br>
-                    <span class="text-brand-yellow italic">Otentik</span> Medan, <br>
-                    Rempahnya <br>
-                    Meresap <br>
+                    <span class="text-brand-yellow italic font-medium">Otentik</span> Medan, <br>
+                    Rempahnya Meresap <br>
                     Sampai ke Hati.
                 </h1>
 
-                <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-lg leading-relaxed font-light">
+                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-lg leading-relaxed font-light">
                     Masakan khas Medan dengan bumbu warisan keluarga. Dimasak fresh setiap pagi, halal 100%, dan porsinya bikin nagih.
                 </p>
 
-                <div class="flex flex-wrap items-center gap-4 mb-12">
-                    <a href="#" class="bg-brand-orange hover:bg-orange-700 transition-colors text-white font-medium px-8 py-3.5 rounded-full flex items-center gap-2 shadow-lg">
+                <div class="flex flex-col sm:flex-row items-center gap-4 mb-12 w-full sm:w-auto">
+                    <a href="#" class="w-full sm:w-auto justify-center bg-brand-orange hover:bg-orange-700 transition-colors text-white font-medium px-8 py-3.5 rounded-full flex items-center gap-2 shadow-lg">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                         Pesan Antar / Booking Meja
                     </a>
-                    <a href="#" class="border border-white/50 hover:bg-white/10 transition-colors text-white font-medium px-8 py-3.5 rounded-full">
+                    <a href="#" class="w-full sm:w-auto justify-center border border-white/50 hover:bg-white/10 transition-colors text-white font-medium px-8 py-3.5 rounded-full flex items-center">
                         Lihat Menu
                     </a>
                 </div>
 
-                <div class="flex flex-wrap items-center gap-6 text-sm text-gray-300 font-medium">
+                <div class="flex flex-wrap items-center gap-4 md:gap-6 text-xs md:text-sm text-gray-300 font-medium">
                     <div class="flex items-center gap-2">
-                        <span class="text-brand-yellow">✓</span> Halal 100%
+                        <span class="text-brand-yellow text-lg">✓</span> Halal 100%
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="text-brand-yellow">🛵</span> GoFood & GrabFood
+                        <span class="text-brand-yellow text-lg">🛵</span> GoFood & GrabFood
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="text-brand-yellow">🕒</span> Buka 08.00 - 21.00
+                        <span class="text-brand-yellow text-lg">🕒</span> Buka 08.00 - 21.00
                     </div>
                 </div>
 
             </main>
         </div>
     </div>
-    <!-- ==================== JAVASCRIPT ==================== -->
-  <script>
-    // Get elements
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const closeIcon = document.getElementById('close-icon');
+   
 
-    // Toggle mobile menu
-    mobileMenuButton.addEventListener('click', () => {
-      // Toggle menu visibility
-      mobileMenu.classList.toggle('hidden');
-      
-      // Toggle icons
-      hamburgerIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-    });
+    <section class="bg-[#FDFBF7] py-20 px-6 md:px-12 lg:px-20 font-sans text-gray-800 relative z-0">
+        <div class="max-w-6xl mx-auto">
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.add('hidden');
-        hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-      }
-    });
+            <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20 mb-32">
+                
+                <div class="w-full md:w-1/2 flex justify-center relative">
+                    <img src="assets/rempah.jpg" alt="Rempah Asli Sumatera" class="w-full max-w-md rounded-2xl shadow-xl object-cover aspect-[4/5]">
+                    
+                    <div class="absolute -bottom-6 right-4 md:right-10 bg-white py-3 px-5 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center">
+                        <span class="text-brand-orange font-bold text-xl md:text-2xl">25+</span>
+                        <span class="text-[8px] md:text-[10px] text-gray-500 uppercase tracking-wider text-center mt-1">Rempah pilihan<br>dari Sumatera</span>
+                    </div>
+                </div>
 
-    // Close mobile menu when resizing to desktop
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768) {
-        mobileMenu.classList.add('hidden');
-        hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-      }
-    });
-  </script>
- </body>
- </html>   
+                <div class="w-full md:w-1/2 flex flex-col items-start">
+                    <span class="text-brand-orange text-[10px] font-bold tracking-[0.2em] uppercase mb-4">Yang Bikin Kangen</span>
+                    
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 leading-[1.1] mb-6">
+                        Kangen masakan <br> Medan yang <br> bumbunya <span class="text-brand-orange">"nendang"</span>?
+                    </h2>
+                    
+                    <p class="text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
+                        Bosan dengan menu makan siang yang itu-itu saja? Kebanyakan tempat menyajikan rasa yang nanggung, kuah yang encer, dan rempah yang hambar.
+                    </p>
+                    <p class="text-sm md:text-base text-gray-900 font-medium leading-relaxed">
+                        Kami hadirkan rasa asli Medan tanpa Anda harus terbang ke Sumatera — diracik dari resep keluarga turun-temurun, dengan rempah utuh yang dihaluskan setiap pagi.
+                    </p>
+                </div>
+                
+            </div>
+
+            <div class="w-full">
+                
+                <div class="mb-10 flex flex-col items-center md:items-start text-center md:text-left">
+                    <span class="text-brand-orange text-[10px] font-bold tracking-[0.2em] uppercase mb-3">Kenapa Bunda Medan</span>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900">
+                        Tiga alasan kenapa <br class="hidden md:block"> pelanggan terus kembali.
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start">
+                        <div class="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center text-white mb-6 shadow-inner">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-gray-900 mb-3">Bumbu Otentik</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">
+                            Rempah pilihan didatangkan langsung dari Sumatera Utara, diracik dengan resep warisan keluarga.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start">
+                        <div class="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center text-white mb-6 shadow-inner">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-gray-900 mb-3">Bahan Fresh Tiap Pagi</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">
+                            Dimasak baru setiap hari sebelum buka. Tidak ada makanan kemarin yang dipanaskan ulang.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start">
+                        <div class="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center text-white mb-6 shadow-inner">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-gray-900 mb-3">Harga Bersahabat</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">
+                            Rasa bintang lima, harga kaki lima. Cocok untuk makan siang harian sampai acara keluarga.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+        btn.addEventListener('click', () => {
+            const isOpen = menu.classList.contains('opacity-0');
+            
+            if (isOpen) {
+                menu.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.classList.add('overflow-hidden');
+            } else {
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

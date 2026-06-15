@@ -1,0 +1,6 @@
+- [ ] Buat plan merging: pilih salah satu versi HTML dari index.html (hapus duplikasi hasil conflict)
+- [ ] Edit my-100-days-dev-journey/index.html: hapus bagian konflik/duplikasi (dua lengkap HTML di file yang sama)
+- [ ] Pastikan hanya ada satu <html> dan satu penutup </html>
+- [ ] Samakan JS mobile menu dengan elemen HTML yang benar (id mobile-menu-btn, icon-open/icon-close, mobile-menu)
+- [ ] Jalankan pengecekan cepat: grep konflik, dan validasi file memiliki hanya satu doctype/html tag
+- [ ] Jika aman, jalankan preview/build (opsional)
